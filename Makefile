@@ -1005,6 +1005,10 @@ include scripts/Makefile.kasan
 include scripts/Makefile.extrawarn
 include scripts/Makefile.ubsan
 
+KCFLAGS += -Wno-error=strict-prototypes \
+           -Wno-error=single-bit-bitfield-constant-conversion \
+           -Wno-error=enum-compare
+
 # Add any arch overrides and user supplied CPPFLAGS, AFLAGS and CFLAGS as the
 # last assignments
 KBUILD_CPPFLAGS += $(ARCH_CPPFLAGS) $(KCPPFLAGS)
